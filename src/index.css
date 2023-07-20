@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #38b6ff;
+  --secondary: #2b3452;
+  --tertiary: "#212121";
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+/* Add these styles in your CSS file */
+.table-container {
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+}
+
+.responsive-table {
+  width: 100%;
+  table-layout: fixed; /* Fixed table layout to evenly distribute td width */
+}
+
+.responsive-table td {
+  word-break: break-word; /* Handle long content by breaking words */
+  text-align: left; /* Adjust text alignment if needed */
+}
