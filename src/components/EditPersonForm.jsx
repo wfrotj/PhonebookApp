@@ -11,6 +11,7 @@ function EditPersonForm({
 }) {
   const { persons, setPersons } = useContext(PersonContext);
   const [newPerson, setNewPerson] = useState(person);
+
   const { id, name, number } = newPerson;
   const fileInputRef = useRef(null);
 
@@ -81,6 +82,7 @@ function EditPersonForm({
           onChange={onChange}
         />
       </div>
+
       <button className="bg-black py-2 text-white font-bold" type="submit">
         Save
       </button>

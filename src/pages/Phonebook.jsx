@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ImExit } from "react-icons/im";
 import LoadingContext from "../features/LoadingContext";
 import PersonList from "../components/PersonList";
@@ -22,6 +22,9 @@ function Phonebook({ user, setUser }) {
     window.localStorage.removeItem("loggedPhonebookUser");
     setUser(null);
   };
+  function scrollToTop() {
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  }
 
   if (loading) {
     return (
@@ -67,10 +70,15 @@ function Phonebook({ user, setUser }) {
                 onCancel={() => setEditPerson(null)}
               />
             ) : (
-              <PersonList
-                setLoading={setLoading}
-                setEditPerson={setEditPerson}
-              />
+              <div className="laptop:flex laptop:flex-col laptop:items-center">
+                <PersonList
+                  setLoading={setLoading}
+                  setEditPerson={setEditPerson}
+                />
+                <div className="flex flex-col items-center justify-center">
+                  <button onClick={scrollToTop}>Scroll to Top</button>
+                </div>
+              </div>
             )}
           </>
         )}

@@ -43,7 +43,7 @@ function LoginForm({ user, setUser }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-500 from-15% via-sky-500 via-1% ">
-      <div className="flex flex-col h-screen justify-center ">
+      <div className="flex flex-col h-screen justify-center mobile:px-2 tablet:px-20 laptop:px-40 ">
         <h1 className="text-4xl mb-4 text-center font-bold">
           Login your account
         </h1>
@@ -81,7 +81,7 @@ function LoginForm({ user, setUser }) {
           </form>
         </div>
         <p className="text-center">
-          Don't have an account?{" "}
+          Don't have an account? <br></br>
           <Link to="/register" className="text-black font-extrabold underline">
             Register here.
           </Link>

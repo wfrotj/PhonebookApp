@@ -33,7 +33,7 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
         setNewNumber("");
         setNewAddress("");
       })
-      .catch((error) => console.log(error))
+      .catch((error) => alert(error.response.data.error))
       .finally(() => setLoading(false));
   };
 
@@ -60,6 +60,7 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
             className="border-solid border-2 border-slate-500 p-2"
             type="text"
             required
+            minLength={5}
             value={newPerson}
             onChange={(e) => setNewPerson(e.target.value)}
           />
@@ -70,6 +71,7 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
             className="border-solid border-2 border-slate-500 p-2"
             type="text"
             required
+            minLength={11}
             value={newNumber}
             onChange={(e) => setNewNumber(e.target.value)}
           />

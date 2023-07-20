@@ -20,22 +20,25 @@ function Contact({ people, setEditPerson, setPersons, persons, setLoading }) {
       .finally(() => setLoading(false));
   };
   return (
-    <div className="flex flex-row items-center justify-center gap-8 laptop:gap-4 ">
-      <div>
+    <div className="flex justify-between p-2 transition-all duration-300 hover:bg-slate-300">
+      {" "}
+      <div className=" flex flex-row items-center justify-space-around gap-6 laptop:gap-4 ">
         <img
-          className="w-[12] h-[12] rounded-full border-solid border-2 border-black"
+          className="w-20 h-20 rounded-full border-solid border-2 border-black"
           src={photoInfo.url}
           alt="image description"
         />
+        <div className="flex flex-col p-1">
+          <p className="mobile:font-semibold tablet:font-bold text-lg">
+            {name}
+          </p>
+          <p className="">{number}</p>
+          <p className="">{address}</p>
+        </div>
       </div>
-      <div className="mobile: text-justify ">
-        <p className="mobile: font-semibold tablet:font-bold text-lg">{name}</p>
-        <p className="">{number}</p>
-        <p className="">{address}</p>
-      </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex items-center flex-col justify-center gap-2 tablet:flex-row tablet:mr-8 laptop:flex-col laptop:gap-6">
         <FaUserEdit
-          className="hover: cursor-pointer"
+          className="hover: cursor-pointer "
           onClick={() => editPerson(people)}
         />
         <FaTrashAlt
