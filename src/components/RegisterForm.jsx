@@ -28,7 +28,7 @@ function RegisterForm({ user }) {
         setUsername("");
         setPassword("");
       })
-      .catch((error) => console.log(error))
+      .catch((error) => alert(error.response.data.error))
       .finally(() => setLoading(false));
   };
 
