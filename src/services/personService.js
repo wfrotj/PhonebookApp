@@ -18,22 +18,22 @@ function setToken(newToken) {
 }
 
 async function getPersons() {
-  const response = await apiClient.get("/persons");
+  const response = await apiClient.get("/api/persons");
   return response.data;
 }
 
 async function createPerson(person) {
-  const response = await apiClient.post("/persons", person);
+  const response = await apiClient.post("/api/persons", person);
   return response.data;
 }
 
 async function updatePerson(id, person) {
-  const response = await apiClient.put(`/persons/${id}`, person);
+  const response = await apiClient.put(`/api/persons/${id}`, person);
   return response.data;
 }
 
 async function deletePerson(id) {
-  const response = await apiClient.delete(`/persons/${id}`);
+  const response = await apiClient.delete(`/api/persons/${id}`);
   return response.status;
 }
 
