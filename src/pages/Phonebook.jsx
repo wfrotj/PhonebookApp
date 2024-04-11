@@ -1,12 +1,11 @@
 import { useState, useEffect, useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ImExit } from "react-icons/im";
 import LoadingContext from "../features/LoadingContext";
 import PersonList from "../components/PersonList";
 import PersonForm from "../components/PersonForm";
 import EditPersonForm from "../components/EditPersonForm";
 import LoadingSpinner from "../components/LoadingSpinner";
-import "../styles/Phonebook.css";
 
 function Phonebook({ user, setUser }) {
   const { loading, setLoading } = useContext(LoadingContext);
