@@ -5,6 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    proxy: "http://localhost:1114",
+    proxy: "https://phonebook-application-4baq.onrender.com",
   },
 });

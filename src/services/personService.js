@@ -1,7 +1,11 @@
 import axios from "axios";
 
+const REACT_URL = import.meta.env.VITE_URL;
+
+const baseUrl = REACT_URL;
+
 const apiClient = axios.create({
-  baseURL: "/api",
+  baseURL: baseUrl,
   headers: {
     common: {
       "Content-Type": "multipart/form-data",

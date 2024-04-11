@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const baseUrl = "/api/users";
+const REACT_URL = import.meta.env.VITE_URL;
+
+const baseUrl = REACT_URL;
 
 async function register(credentials) {
   const response = await axios.post(baseUrl, credentials);
