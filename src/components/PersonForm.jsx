@@ -7,6 +7,9 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
   const [newPerson, setNewPerson] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [newAddress, setNewAddress] = useState("");
+  const [newBirthday, setNewBirthday] = useState("");
+  const [newAge, setNewAge] = useState("");
+
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -23,7 +26,8 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
     newPersonData.append("name", newPerson);
     newPersonData.append("number", newNumber);
     newPersonData.append("address", newAddress);
-
+    newPersonData.append("birthday", newBirthday);
+    newPersonData.append("age", newAge);
     personService
       .createPerson(newPersonData)
       .then((returnedPerson) => {
@@ -32,6 +36,8 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
         setNewPerson("");
         setNewNumber("");
         setNewAddress("");
+        setNewBirthday("");
+        setNewAge("");
       })
       .catch((error) => alert(error.response.data.error))
       .finally(() => setLoading(false));
@@ -84,6 +90,26 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
             required
             value={newAddress}
             onChange={(e) => setNewAddress(e.target.value)}
+          />
+        </div>
+        <div className="flex flex-col">
+          <label>Birthday</label>
+          <input
+            className="border-solid border-2 border-slate-500 p-2"
+            type="date"
+            required
+            value={birthday}
+            onChange={(e) => setNewBirthday(e.target.value)}
+          />
+        </div>
+        <div className="flex flex-col">
+          <label>Address</label>
+          <input
+            className="border-solid border-2 border-slate-500 p-2"
+            type="text"
+            required
+            value={newAge}
+            onChange={(e) => setNewAge(e.target.value)}
           />
         </div>
         <button
