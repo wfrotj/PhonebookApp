@@ -98,7 +98,7 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
             className="border-solid border-2 border-slate-500 p-2"
             type="date"
             required
-            value={birthday}
+            value={newBirthday}
             onChange={(e) => setNewBirthday(e.target.value)}
           />
         </div>
