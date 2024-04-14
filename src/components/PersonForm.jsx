@@ -21,12 +21,14 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
 
     setLoading(true);
 
+    const formattedBirthday = new Date(newBirthday).toISOString().split("T")[0];
+
     const newPersonData = new FormData();
     newPersonData.append("image", newPhoto);
     newPersonData.append("name", newPerson);
     newPersonData.append("number", newNumber);
     newPersonData.append("address", newAddress);
-    newPersonData.append("birthday", newBirthday);
+    newPersonData.append("birthday", formattedBirthday);
     newPersonData.append("age", newAge);
     personService
       .createPerson(newPersonData)

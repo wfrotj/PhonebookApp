@@ -12,7 +12,7 @@ function EditPersonForm({
   const { persons, setPersons } = useContext(PersonContext);
   const [newPerson, setNewPerson] = useState(person);
 
-  const { id, name, number } = newPerson;
+  const { id, name, number, birthday, age } = newPerson;
   const fileInputRef = useRef(null);
 
   const handleUpdate = (e) => {
@@ -22,6 +22,8 @@ function EditPersonForm({
     const updatedPerson = new FormData();
     updatedPerson.append("name", name);
     updatedPerson.append("number", number);
+    updatedPerson.append("birthday", birthday);
+    updatedPerson.append("age", age);
     newPhoto ? updatedPerson.append("image", newPhoto) : null;
 
     personService
@@ -79,6 +81,26 @@ function EditPersonForm({
           type="text"
           value={number}
           name="number"
+          onChange={onChange}
+        />
+      </div>
+      <div className="flex flex-col">
+        <label>Birthday</label>
+        <input
+          className="border-solid border-2 border-slate-500 p-2"
+          type="date"
+          value={birthday}
+          name="birtday"
+          onChange={onChange}
+        />
+      </div>
+      <div className="flex flex-col">
+        <label>Age</label>
+        <input
+          className="border-solid border-2 border-slate-500 p-2"
+          type="text"
+          value={age}
+          name="age"
           onChange={onChange}
         />
       </div>
