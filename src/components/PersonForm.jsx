@@ -103,7 +103,7 @@ function PersonForm({ setLoading, newPhoto, setNewPhoto }) {
           />
         </div>
         <div className="flex flex-col">
-          <label>Address</label>
+          <label>Age</label>
           <input
             className="border-solid border-2 border-slate-500 p-2"
             type="text"

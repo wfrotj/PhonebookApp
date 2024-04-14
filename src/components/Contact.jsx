@@ -3,7 +3,7 @@ import { FaTrashAlt, FaUserEdit } from "react-icons/fa";
 import personService from "../services/personService";
 
 function Contact({ people, setEditPerson, setPersons, persons, setLoading }) {
-  const { name, address, number, photoInfo } = people;
+  const { name, address, number, birthday, age, photoInfo } = people;
 
   const editPerson = (person) => {
     setEditPerson(person);
@@ -34,6 +34,8 @@ function Contact({ people, setEditPerson, setPersons, persons, setLoading }) {
           </p>
           <p className="">{number}</p>
           <p className="">{address}</p>
+          <p className="">{birthday}</p>
+          <p className="">{age}</p>
         </div>
       </div>
       <div className="flex items-center flex-col justify-center gap-2 tablet:flex-row tablet:mr-8 laptop:flex-col laptop:gap-6">
